@@ -1,6 +1,6 @@
 function seeif(){
     if (localStorage.getItem('users') === null){
-        alert("Gotta SignIn/Register Before CHecking details")
+        alert("Got to SignIn/Register Before CHecking details")
     }
 }
 
@@ -47,7 +47,7 @@ function registerUser() {
         alert('Signed Up Successfully')
         localStorage.setItem('activeAccount', username)
         $('#logindisappear').addClass('d-none')
-        $('#logindisappear').replaceWith('<h1>Hello!</h1><h1 id="usernamename"></h1>')
+        $('#logindisappear').replaceWith('<h1>Hello!</h1><h1> id="usernamename"></h1>')
         $('#logindisappear1').addClass('d-none')
         $('#usernamename').replaceWith(username)
         return true
