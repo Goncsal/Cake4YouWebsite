@@ -101,10 +101,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>Torne-se Parceiro!</h2>
+                    <h2>Os Seus Detalhes</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Torne-se Parceiro!</li>
+                        <li class="breadcrumb-item"><a href=""></a></li>
+                        <li class="breadcrumb-item active">Veja os seus detalhes de Conta</li>
                     </ul>
                 </div>
             </div>
@@ -114,99 +114,19 @@
 
     <!-- Start About Page  -->
     <div class="container clearfix justify-content-center">
-        <form>
-            <div class="row">
-                <div class="col-6">
-                    <br>
-                    <div class="row">
-                        <label>Nome do negócio:   </label>
-                        <input style="margin-right: 5%;" type="text" id="nome" class="input-group" name="nome" placeholder="Insira aqui o nome do seu negócio" required>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <label>Número de telemóvel:</label>
-                        <input type="tel" style="margin-right: 5%;" id="telefone" class="input-group" name="telefone" placeholder="Insira aqui o seu número de telefone" required>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <label>Documentação do estabelecimento</label>
-                        <input type="file" style="margin-right: 5%;" class="input-group" id="doc_estabelecimento" name="doc_estabelecimento" placeholder="Anexe os documentos do estabelecimento" required>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <br>
-                    <div class="row">
-                        <label>Email:</label>
-                        <input class="input-group" type="email" id="email" name="email" placeholder="Insira aqui o seu email" required>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <label>Morada do estabelecimento:</label>
-                        <input class="input-group"   type="text" id="morada" name="morada" placeholder="Insira aqui o local onde serão preparados os bolos" required>
-                    </div>  
-                    <br>
-                    <div class="row">
-                        <label style="margin-right: 60%;">Documentação sanitária</label>
-                        <input type="file" id="doc_sanitaria" name="doc_sanitaria" placeholder="Anexe os documentos sanitários" required>
-                    </div>
-
-                </div>
-                <br>
-                <div class="mt-5"><button class="btn btn-secondary btn-lg"   type="submit" >Enviar Candidatura</button></div>
-
-
-            </div>
-            
-        </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- <div class="row">
-            <div class="column col-4">
-                <div class="row">
-                <div class="container">
-                    <form>
-                        <label>Nome do negócio</label>
-                        <input type="text" id="nome" name="nome" placeholder="Insira aqui o nome do seu negócio" required>
-                        <label>Número de telemóvel</label>
-                        <input type="tel" id="telefone" name="telefone" placeholder="Insira aqui o seu número de telefone" required>
-                        <label>Password</label>
-                        <input type="password" id="password" name="password" placeholder="Crie uma password" required>
-                        <label>Documentação do estabelecimento</label>
-                        <input type="file" id="doc_estabelecimento" name="doc_estabelecimento" placeholder="Anexe os documentos do estabelecimento" required>
-                        <br>
-                    </form>
-                  </div>
-                </div>
-            </div>
-            <div class="column col-4">
-                <br><br><br><br>
-                <div class="container">
-                    <form>
-                        <label>Email</label>
-                        <input type="email" id="email" name="email" placeholder="Insira aqui o seu email" required>
-                        <label>Morada do estabelecimento</label>
-                        <input type="text" id="morada" name="morada" placeholder="Insira aqui o local onde serão preparados os bolos" required>
-                        <label>Repetir password</label>
-                        <input type="password" id="repeated_password" name="repeated_password" placeholder="Repita a password" required>
-                        <label>Documentação sanitário</label>
-                        <input type="file" id="doc_sanitaria" name="doc_sanitaria" placeholder="Anexe os documentos sanitários" required>
-                    </form>
-                </div>
-            </div>
-        </div> -->
+        <div class="row mt-5">
+            <div class="col-6"><h3>O Seu Nome:</h3></div>
+            <div class="col-6" id="nomelocal"></div>
+        </div>
+        <div class="row">
+            <div class="col-6"><h3>O Seu Email:</h3></div>
+            <div class="col-6" id="emaillocal"></div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-6"><h3>A Sua Password:</h3></div>
+            <div class="col-6" id="passlocal"></div>
+        </div>
+        
     </div>
     <br>
     <br>
@@ -298,7 +218,7 @@
     <!-- Start copyright  -->
     <div class="footer-copyright">
         <p class="footer-company">All Rights Reserved. &copy; 2018 <a href="#">Cake4You</a> Design By :
-            <a href="">Grupo de MAS :D</a></p>
+            <a href="">Grupo de MAS :D</a></p></p>
     </div>
     <!-- End copyright  -->
 
@@ -321,5 +241,6 @@
     <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>
     <script src="https://kit.fontawesome.com/a62159914b.js" crossorigin="anonymous"></script>
+    <script src="buscaraolocal.js"></script>
 
 </html>
