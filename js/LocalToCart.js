@@ -79,7 +79,7 @@ $(document).ready(function() {
 
 //   });
 
-$('#del').on('click', function(){
+$('.del').on('click', function(){
   delTableRow('BabaCamelo');
   delTableRow('BoloAmendoa');
   delTableRow('BoloAnanas');
