@@ -115,90 +115,17 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="table-main table-responsive">
-                        <table class="table">
+                        <table class="table" id="myTable">
                             <thead>
                                 <tr>
-                                    <th>Images</th>
                                     <th>Product Name</th>
                                     <th>Price</th>
                                     <th>Quantity</th>
                                     <th>Total</th>
-                                    <th>Remove</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="thumbnail-img">
-                                        <a href="#">
-									<img class="img-fluid" src="images/img-pro-01.jpg" alt="" />
-								</a>
-                                    </td>
-                                    <td class="name-pr">
-                                        <a href="#">
-									Artigo Fixo
-								</a>
-                                    </td>
-                                    <td class="price-pr">
-                                        <p>€10,79</p>
-                                    </td>
-                                    <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
-                                    <td class="total-pr">
-                                        <p>€10,79</p>
-                                    </td>
-                                    <td class="remove-pr">
-                                        <a href="#">
-									<i class="fas fa-times"></i>
-								</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="thumbnail-img">
-                                        <a href="#">
-									<img class="img-fluid" src="images/img-pro-02.jpg" alt="" />
-								</a>
-                                    </td>
-                                    <td class="name-pr">
-                                        <a href="#">
-									Artigo Fixo
-								</a>
-                                    </td>
-                                    <td class="price-pr">
-                                        <p>€10,79</p>
-                                    </td>
-                                    <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
-                                    <td class="total-pr">
-                                        <p>€10,79</p>
-                                    </td>
-                                    <td class="remove-pr">
-                                        <a href="#">
-									<i class="fas fa-times"></i>
-								</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="thumbnail-img">
-                                        <a href="#">
-									<img class="img-fluid" src="images/img-pro-03.jpg" alt="" />
-								</a>
-                                    </td>
-                                    <td class="name-pr">
-                                        <a href="#">
-									Artigo Fixo
-								</a>
-                                    </td>
-                                    <td class="price-pr">
-                                        <p>€10,79</p>
-                                    </td>
-                                    <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
-                                    <td class="total-pr">
-                                        <p>€10,79</p>
-                                    </td>
-                                    <td class="remove-pr">
-                                        <a href="#">
-									<i class="fas fa-times"></i>
-								</a>
-                                    </td>
-                                </tr>
+
                             </tbody>
                         </table>
                     </div>
@@ -211,7 +138,16 @@
                         <div class="input-group input-group-sm">
                             <input class="form-control" placeholder="Enter your coupon code" aria-label="Coupon code" type="text">
                             <div class="input-group-append">
-                                <button class="btn btn-theme" type="button">Aplicar Cupão</button>
+                                <button class="btn btn-theme" type="button" onclick="alert('Cupão Expirou a 27/12/2023')">Aplicar Cupão</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="coupon-box">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-append">
+                                <button class="btn btn-theme" type="button" id="del">Limpar Carrinho</button>
                             </div>
                         </div>
                     </div>
@@ -225,20 +161,16 @@
                         <h3>Compra</h3>
                         <div class="d-flex">
                             <h4>Sub Total</h4>
-                            <div class="ml-auto font-weight-bold"> € 34 </div>
+                            <div class="ml-auto font-weight-bold stotal" id=""> 0 €</div>
                         </div>
                         <div class="d-flex">
                             <h4>Desconto</h4>
-                            <div class="ml-auto font-weight-bold"> € 10 </div>
+                            <div class="ml-auto font-weight-bold"> 0 € </div>
                         </div>
                         <hr class="my-1">
                         <div class="d-flex">
                             <h4>Desconto de Cupão</h4>
-                            <div class="ml-auto font-weight-bold"> € 5 </div>
-                        </div>
-                        <div class="d-flex">
-                            <h4>Iva</h4>
-                            <div class="ml-auto font-weight-bold"> € 2 </div>
+                            <div class="ml-auto font-weight-bold"> 0 €</div>
                         </div>
                         <div class="d-flex">
                             <h4>Custo de envio</h4>
@@ -247,16 +179,172 @@
                         <hr>
                         <div class="d-flex gr-total">
                             <h5>Total</h5>
-                            <div class="ml-auto h5"> € 21 </div>
+                            <div class="ml-auto h5 stotal" > 0 €</div>
                         </div>
                         <hr> </div>
                 </div>
-                <div class="col-12 d-flex shopping-box"><a href="checkout.html" class="ml-auto btn hvr-hover">FInaizar Compra</a> </div>
+                <div class="col-12 d-flex shopping-box"><a data-toggle="modal" data-target="#myModal" class="ml-auto btn hvr-hover">Finalizar Compra</a> </div>
             </div>
 
         </div>
     </div>
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+        <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button style="float: left;" type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Dados para Pagamento</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="checkout-address">
+                        <div class="title-left">
+                            <h3>Morada de Envio</h3>
+                        </div>
+                        <form class="needs-validation" novalidate>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="firstName">Primeiro Nome *</label>
+                                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                                    <div class="invalid-feedback"> Valid first name is required. </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastName">Último Nome *</label>
+                                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                                    <div class="invalid-feedback"> Valid last name is required. </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email">Email Address *</label>
+                                <input type="email" class="form-control" id="email" placeholder="">
+                                <div class="invalid-feedback"> Please enter a valid email address for shipping updates. </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="address">Morada *</label>
+                                <input type="text" class="form-control" id="address" placeholder="" required>
+                                <div class="invalid-feedback"> Please enter your shipping address. </div>
+                            </div>
+                                <div class="col-md-5 mb-3">
+                                    <label for="country">País *</label>
+                                    <select class="wide w-100" id="country">
+									<option value="Choose..." data-display="Select">Choose...</option>
+									<option value="United States">Portugal</option>
+								</select>
+                                    <div class="invalid-feedback"> Porfavor selecione um país válido. </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="state">Cidade *</label>
+                                    <select class="wide w-100" id="state">
+									<option data-display="Select">Choose...</option>
+									<option>Aveiro</option>
+								</select>
+                                    <div class="invalid-feedback"> Porfavor selecione uma cidade válida. </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="zip">Código-Postal *</label>
+                                    <input type="text" class="form-control" id="zip" placeholder="" required>
+                                    <div class="invalid-feedback"> Código-Postal necessário. </div>
+                                </div>
+                            </div>
+                            <hr class="mb-4">
+                            <!-- <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="same-address">
+                                <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="save-info">
+                                <label class="custom-control-label" for="save-info">Save this information for next time</label>
+                            </div> -->
+                            <hr class="mb-4">
+                            <div class="title"> <span>Pagamento</span> </div>
+                            <div class="d-block my-3">
+                                <div class="custom-control custom-radio">
+                                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                                    <label class="custom-control-label" for="credit">Cartão de crédito</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                                    <label class="custom-control-label" for="debit">Cartão de débito</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+                                    <label class="custom-control-label" for="paypal">Paypal</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="cc-name">Nome do cartão</label>
+                                    <input type="text" class="form-control" id="cc-name" placeholder="" required> <small class="text-muted">Full name as displayed on card</small>
+                                    <div class="invalid-feedback"> Name on card is required </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="cc-number">Credit card number</label>
+                                    <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                                    <div class="invalid-feedback"> Credit card number is required </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 mb-3">
+                                    <label for="cc-expiration">Expira em</label>
+                                    <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                                    <div class="invalid-feedback"> Expiration date required </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="cc-expiration">CVV</label>
+                                    <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                                    <div class="invalid-feedback"> Security code required </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="payment-icon">
+                                        <ul>
+                                            <li><img class="img-fluid" src="images/payment-icon/1.png" alt=""></li>
+                                            <li><img class="img-fluid" src="images/payment-icon/2.png" alt=""></li>
+                                            <li><img class="img-fluid" src="images/payment-icon/3.png" alt=""></li>
+                                            <li><img class="img-fluid" src="images/payment-icon/5.png" alt=""></li>
+                                            <li><img class="img-fluid" src="images/payment-icon/7.png" alt=""></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal1"  data-dismiss="modal" style="background-color: bisque;">Realizar Pagamento</button>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div id="myModal1" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+      
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Pagamento</h4>
+            </div>
+            <div class="modal-body">
+              <p>Pagamento Realizado com sucesso!</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+
+
+
     <!-- End Cart -->
+
+
+
+
     <!-- Start Footer  -->
     <footer>
         <div class="footer-main">
@@ -369,6 +457,7 @@
     <script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/LocalToCart.js"></script>
 </body>
 
 </html>
